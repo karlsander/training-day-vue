@@ -22,7 +22,7 @@
           style="width: 100px; height: 50px; border: 2px solid black; background: white; font-weight: bold"
         >Next Round</button>
         <div style="height: 20px; padding-top: 6px;">
-          <div v-if="colors.picked !== ''">You picked the right color.</div>
+          <div v-if="colors.picked === colors.right">You picked the right color.</div>
           <div v-else>You picked the wrong color</div>
         </div>
       </div>
