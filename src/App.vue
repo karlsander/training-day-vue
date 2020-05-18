@@ -2,7 +2,7 @@
   <div id="app">
     <GameControlHeader :score="score" v-on:new-game-click="resetGame" />
     <h2>Pick the following Color:</h2>
-    <h1>{{colors.right}}</h1>
+    <h1>{{ colors.right }}</h1>
     <div class="color-row" v-if="colors.picked === ''">
       <ColorChoiceButton
         v-for="color in colors.choices"
@@ -12,7 +12,10 @@
       />
     </div>
     <div v-if="colors.picked !== ''" class="color-row">
-      <div class="color-result" :style="{borderColor: colors.right}">Target color {{colors.right}}</div>
+      <div
+        class="color-result"
+        :style="{ borderColor: colors.right }"
+      >>Target color {{ colors.right }}</div>
       <div
         style="display: flex; flex-direction: column; justify-content: space-between; align-items: center;"
       >
@@ -26,12 +29,15 @@
           <div v-else>You picked the wrong color</div>
         </div>
       </div>
-      <div class="color-result" :style="{borderColor: colors.picked}">You picked {{colors.picked}}</div>
+      <div
+        class="color-result"
+        :style="{ borderColor: colors.picked }"
+      >You picked {{ colors.picked }}</div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from "vue";
 import ColorChoiceButton from "@/components/ColorChoiceButton";
 import GameControlHeader from "@/components/GameControlHeader";
